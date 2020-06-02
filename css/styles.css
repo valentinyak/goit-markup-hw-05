@@ -100,7 +100,7 @@ button {
 .site-nav > li:not(:last-child) {
   margin-right: 50px;
 }
-.site-nav > li > a {
+.site-nav > li a {
   padding: 32px 0px;
 }
 .site-nav a:hover,
@@ -135,6 +135,15 @@ button {
 .main-addr a:focus,
 .current {
   color: var(--accent-color);
+}
+div.current::after {
+  display: block;
+  width: 100%;
+  height: 4px;
+
+  content: '';
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 .main-addr svg {
   margin-right: 10px;
@@ -254,9 +263,14 @@ button {
   margin-right: 30px;
 }
 .our-work-link {
+  position: relative;
+
   text-align: center;
 }
 .our-work-description {
+  position: absolute;
+  bottom: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -383,10 +397,12 @@ button {
 .clients-list svg {
   fill: #afb1b8;
 }
-.clients-list a:hover {
+.clients-list a:hover,
+.clients-list a:focus {
   border: 1px solid var(--accent-color);
 }
-.clients-list a:hover > svg {
+.clients-list a:hover > svg,
+.clients-list a:focus > svg {
   fill: var(--accent-color);
 }
 
@@ -400,7 +416,8 @@ button {
   margin: 0px;
   padding: 0px;
 }
-.projects-list-item:hover {
+.projects-list-item:hover,
+.projects-list-item:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
   border-bottom-right-radius: 5px;
@@ -419,6 +436,19 @@ button {
 .projects-list-item > a {
   display: inline-block;
 }
+.backdrop {
+  position: relative;
+}
+/* .backdrop {
+  position: absolute;
+  bottom: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
+  height: 294px;
+} */
 .projects-list-content {
   padding: 20px 24px;
 
@@ -444,13 +474,27 @@ button {
   line-height: 1.87;
 }
 .project-description {
+  position: absolute;
+  bottom: 0px;
+  opacity: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
+  height: 294px;
   margin: 0px;
+  padding: 0px 24px;
 
   color: var(--white-text-color);
   background: rgba(33, 150, 243, 0.9);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
+}
+.projects-list-item:hover .project-description,
+.projects-list-item:focus .project-description {
+  opacity: 1;
 }
 
 /* Стилизация кнопок */
@@ -542,7 +586,8 @@ footer {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
 }
-.social-networks-links a:hover {
+.social-networks-links a:hover,
+.social-networks-links a:focus {
   background: var(--accent-color);
 }
 .social-networks-links li:not(:last-child) {

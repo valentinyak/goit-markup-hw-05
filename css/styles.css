@@ -157,7 +157,6 @@ button {
 /* div.current::after {
   display: block;
   height: 4px;
-
   content: '';
   background-color: var(--accent-color);
   border-radius: 2px;
@@ -339,9 +338,6 @@ button {
 .our-team-foto {
   margin-bottom: 30px;
 }
-.our-team-foto:hover {
-  transform: perspective(400px) rotateY(60deg);
-}
 .our-team-name {
   margin: 0px 0px 10px;
 }
@@ -495,7 +491,6 @@ button {
 }
 .project-description {
   position: absolute;
-  top: 0;
   transform: translateY(100%);
 
   display: flex;
@@ -517,6 +512,7 @@ button {
 .projects-list-item:hover .project-description,
 .projects-list-item:focus .project-description {
   transform: scaleY(1);
+  top: 0;
 }
 
 /* Стилизация кнопок */
